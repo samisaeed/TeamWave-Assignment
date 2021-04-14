@@ -1,0 +1,41 @@
+<div style="width: 100%;" fxLayout="column" fxFlex="true">
+  <div fxLayout="row" fxLayoutGap="10px">
+    <div fxFlex="16">
+    </div>
+
+    <div fxFlex="70" class="left_divider">
+      <div style="padding:20px">
+        <div *ngIf="searchData">
+          <ng-container *ngIf="searchTag">
+            <p style="font-size: 2.07692308rem !important;">Search Results</p>
+            <h4 style="font-weight: 100; color: #6a737c;"> Results for {{searchTitle}}</h4>
+            <h3 style="font-weight: 100;">{{searchData.total}} results</h3>
+          </ng-container>
+
+          <ng-container *ngIf="!searchTag">
+            <p style="font-size: 2.07692308rem !important;">Questions tagged {{searchTitle}}</p>
+          </ng-container>
+
+        </div>
+      </div>
+      <ng-container *ngIf="!noDataFound">
+        <ng-container *ngIf="searchData">
+          <ng-container *ngFor="let result of searchData.items">
+            <app-search-list [searchResult]="result"></app-search-list>
+          </ng-container>
+        </ng-container>
+        <app-pagination *ngIf="searchData" ></app-pagination>
+      </ng-container>
+
+      <ng-container *ngIf="noDataFound">
+        <p style="font-size: 2.07692308rem !important;">No Data Found For {{searchTitle}}</p>
+      </ng-container>
+
+
+
+    </div>
+
+    <div fxFlex="14"></div>
+  </div>
+</div>
+

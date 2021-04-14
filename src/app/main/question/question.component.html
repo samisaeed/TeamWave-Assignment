@@ -1,0 +1,83 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div style="width: 100%;" fxLayout="column" fxFlex="true">
+  <div fxLayout="row" fxLayoutGap="10px">
+    <div fxFlex="16">
+    </div>
+
+    <div fxFlex="70" class="left_divider">
+      <div style="padding:20px">
+        <div>
+          <p style="font-size: 2.07692308rem !important;">{{questionDetails.title}}</p>
+          <div style="display: flex; margin-top: -25px;">
+            <h4 style="font-weight: 100; color: #6a737c; margin-right: 20px">
+              Asked {{questionDetails.creation_date | date}}</h4>
+            <h4 style="font-weight: 100; color: #6a737c; margin-right: 20px">
+              Active {{questionDetails.last_activity_date | date}}</h4>
+            <h4 style="font-weight: 100; color: #6a737c;"> Viewed {{questionDetails.view_count}} times</h4>
+
+          </div>
+        </div>
+
+        <!--        star-->
+
+        <div class="divider" fxLayout="row" fxLayoutGap="15px" style="padding:20px">
+          <div fxFlex="10">
+            <div>
+              <div>
+                <img src="../../../assets/iconfinder_arrow-drop-down_326521.png" style="width: 40px;"/>
+              </div>
+            </div>
+            <div class="votes">
+            <span style="text-align: center; color: #6a737c;">
+              {{questionDetails.score}}
+            </span>
+            </div>
+            <div>
+              <img src="../../../assets/iconfinder_arrow-drop-up_326524.png" style="width: 40px;"/>
+            </div>
+
+          </div>
+          <div fxFlex="90">
+
+            <div class="questions">
+
+              <div class="q_text" [innerHTML]="questionDetails.body "></div>
+
+              <div>
+                <ng-container *ngIf="showTags">
+                  <ng-container *ngFor="let tag of questionDetails.tags">
+                    <button class="tag_btn">{{tag}}</button>
+                  </ng-container>
+
+                </ng-container>
+                <p class="owner">asked {{questionDetails.creation_date | date}} by <span
+                  style="color:#0077cc">{{questionDetails.owner.display_name}}</span></p>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+        <!--        star-->
+
+        <p style="font-weight: 400;font-size: 18px;">{{questionDetails.answer_count}} Answers</p>
+
+        <ng-container *ngIf="showAnswer">
+          <ng-container *ngFor="let answer of questionDetails.answers">
+            <app-all-answer [answerId]="answer.answer_id"></app-all-answer>
+          </ng-container>
+
+        </ng-container>
+
+
+      </div>
+
+    </div>
+
+    <div fxFlex="14"></div>
+  </div>
+</div>

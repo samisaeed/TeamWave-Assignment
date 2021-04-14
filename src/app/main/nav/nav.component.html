@@ -1,0 +1,14 @@
+<div class="topnav">
+  <a routerLink="/" ><img width="130px" src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png"/> </a>
+  <div class="search-container">
+      <input
+        [formControl]="SearchDataList"
+        type="text"
+        #input
+        (keyup.enter)="onKyeUp($event)"
+        placeholder="Search... & ... press enter"
+        name="search"
+      >
+  </div>
+</div>
+<app-loader *ngIf="spinner"></app-loader>

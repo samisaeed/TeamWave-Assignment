@@ -1,0 +1,24 @@
+.example-loading-shade {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  justify-content: center;
+  height: 100%;
+}
+.mat-progress-spinner {
+  display: block;
+  position: relative;
+  background: burlywood;
+}
+.example-loading-shade .spinner {
+  position: relative;
+  align-items: center;
+  margin-top: 40vh;
+}
+
+

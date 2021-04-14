@@ -1,0 +1,50 @@
+.answers{
+  padding: 10px 5px;
+  background: #48a868;
+  color: white;
+}
+.votes{
+  padding: 10px 5px;
+}
+.questions{
+  padding-left: 5px;
+}
+.q_title{
+  font-size: 18px;
+  color: #0077cc;
+  cursor: pointer;
+}
+.tag_btn{
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #39739d;
+  background-color: #e1ecf4;
+  border-color: #00000000;
+  margin-right: 10px;
+}
+.tag_btn:hover{
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #2c5777;
+  background-color: #d1e5f1;
+  border-color: #00000000;
+  margin-right: 10px;
+}
+.owner{
+  float: right;
+  color: #6a737c;
+  cursor: pointer;
+}
+.divider{
+  border-top: 1px solid #eff0f1;
+}
+.left_divider{
+  border-left: 1px solid #eff0f1;
+}
+.img_user{
+  width: 35px;
+  border: 1px solid black;
+  margin: 3px;
+}

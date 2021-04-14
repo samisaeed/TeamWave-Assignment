@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "teamwave-task"
+    }
+  },
+  "defaultProject": "teamwave-task",
+  "cli": {
+    "analytics": "b859551e-27dd-4a4f-9d6d-47fbf961c900"
+  }
 }

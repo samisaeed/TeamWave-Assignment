@@ -1,0 +1,32 @@
+<div class="divider" fxLayout="row" fxLayoutGap="15px" style="padding:20px">
+  <div fxFlex="10">
+    <div class="votes">
+            <span style="display: grid; text-align: center; color: #6a737c;">{{searchResult.score}} <span
+              style="padding-top: 5px;">votes</span></span>
+    </div>
+    <div class="answers">
+      <span style="display: grid; text-align: center;">{{searchResult.answer_count}} <span style="padding-top: 5px;">answers</span></span>
+    </div>
+  </div>
+  <div fxFlex="90">
+
+    <div class="questions">
+
+      <p class="q_title" (click)="onQuestionClick(searchResult.question_id)"> Q: {{searchResult.title}}</p>
+      <div class="q_text" [innerHTML]="searchResult.body | slice:1 : 350"></div>
+
+      <div>
+        <ng-container *ngIf="showTags" >
+          <ng-container *ngFor="let tag of searchResult.tags">
+            <button class="tag_btn">{{tag}}</button>
+          </ng-container>
+
+        </ng-container>
+        <p class="owner">asked {{searchResult.creation_date | date}} by <span style="color:#0077cc">{{searchResult.owner.display_name}}</span></p>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
